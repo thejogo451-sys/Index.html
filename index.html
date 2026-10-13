@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090914">
+<title>ORBITA — Caja de herramientas digitales</title>
+<style>
+:root{--bg:#090914;--panel:#131326;--panel2:#191933;--line:#2d2b54;--text:#f5f2ff;--muted:#aaa5c8;--violet:#a78bfa;--cyan:#67e8f9;--pink:#f0abfc;--good:#86efac}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#241348 0,transparent 38%),radial-gradient(ellipse at 100% 35%,#10263d 0,transparent 30%),var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+button,input,textarea{font:inherit}button{cursor:pointer}a{color:var(--cyan)}.wrap{max-width:1120px;margin:auto;padding:20px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0 24px}.brand{display:flex;gap:12px;align-items:center}.logo{width:44px;height:44px;border:1px solid #7770c9;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,#33245e,#102b42);font-size:24px;box-shadow:0 0 28px #8b5cf633}.brand strong{letter-spacing:.18em;font-size:1rem}.brand small{display:block;color:var(--muted);letter-spacing:.04em}.top-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#1a1932;color:var(--text);padding:10px 14px;border-radius:12px;transition:.2s}.btn:hover{transform:translateY(-1px);border-color:var(--violet)}.btn.primary{background:linear-gradient(120deg,#7955d9,#3e6eab);border-color:transparent}.btn.subtle{background:transparent}.hero{padding:32px 0 24px;display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:center}.eyebrow{color:var(--cyan);font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.hero h1{font-size:clamp(2.25rem,6vw,4.6rem);line-height:1.02;letter-spacing:-.055em;margin:12px 0 18px}.gradient{background:linear-gradient(100deg,#fff,#c4b5fd 48%,#67e8f9);background-clip:text;-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:590px}.orb-wrap{min-height:250px;display:grid;place-items:center;position:relative;overflow:hidden}.orb{width:190px;height:190px;border-radius:50%;position:relative;background:radial-gradient(circle at 32% 28%,#e9d5ff 0,#a78bfa 9%,#5b35a5 28%,#171334 63%,#080812 74%);box-shadow:inset -18px -16px 32px #0009,0 0 50px #8b5cf655;animation:float 6s ease-in-out infinite}.orb:before,.orb:after{content:"";position:absolute;border:1px solid #a5f3fc99;border-radius:50%;inset:24px -42px;transform:rotate(-25deg)}.orb:after{inset:49px -55px;transform:rotate(45deg);border-color:#c4b5fd88}.star{position:absolute;color:#c4b5fd;animation:twinkle 3s infinite alternate}.star.s1{top:18%;left:12%}.star.s2{top:22%;right:13%;animation-delay:1s}.star.s3{bottom:14%;left:20%;animation-delay:.4s}.star.s4{bottom:16%;right:17%;animation-delay:1.4s}@keyframes float{50%{transform:translateY(-10px) rotate(4deg)}}@keyframes twinkle{to{opacity:.25;transform:scale(.7)}}.stats{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.pill{border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:var(--muted);font-size:.82rem}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:22px 0 14px}.section-head h2{margin:0;font-size:1.35rem}.section-head p{margin:3px 0 0;color:var(--muted);font-size:.9rem}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{border:1px solid var(--line);border-radius:20px;background:linear-gradient(150deg,#17172fdd,#0f1020ee);padding:18px;min-height:205px;display:flex;flex-direction:column;transition:.22s}.card:hover{transform:translateY(-3px);border-color:#6d60b3;box-shadow:0 12px 32px #0003}.card-icon{width:44px;height:44px;display:grid;place-items:center;border-radius:14px;background:#292348;border:1px solid #47406f;font-size:23px}.card h3{margin:14px 0 5px}.card p{color:var(--muted);font-size:.9rem;margin:0 0 18px}.card .btn{margin-top:auto;align-self:flex-start}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}.panel{border:1px solid var(--line);border-radius:20px;background:#111122d9;padding:18px}.panel h2{font-size:1.15rem;margin:0 0 8px}.panel p,.hint{color:var(--muted);font-size:.9rem}.field{display:flex;flex-direction:column;gap:7px;margin:12px 0}.field label{font-size:.85rem;color:#d8d3f0}.field input,.field textarea{width:100%;color:var(--text);background:#090916;border:1px solid #37345c;border-radius:11px;padding:11px 12px;outline:none}.field input:focus,.field textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #67e8f91a}.field textarea{min-height:95px;resize:vertical}.row{display:flex;gap:8px;flex-wrap:wrap}.note-list{display:grid;gap:8px;margin-top:12px}.note{padding:12px;border-radius:12px;background:#1b1a33;border:1px solid #302d51;overflow-wrap:anywhere}.note small{display:block;color:var(--muted);margin-top:5px}.notice{border:1px solid #3e3a63;border-radius:12px;padding:12px;background:#17162b;color:#c9c3e5;font-size:.86rem;margin-top:12px}.output{padding:14px;background:#090916;border:1px dashed #49436f;border-radius:12px;white-space:pre-wrap;overflow-wrap:anywhere;min-height:50px;color:#e9ddff;margin-top:12px}.hidden{display:none!important}footer{border-top:1px solid #24223f;margin-top:28px;padding:22px 0;color:var(--muted);font-size:.82rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.modal-backdrop{position:fixed;inset:0;background:#03030bcc;display:grid;place-items:center;padding:16px;z-index:5}.modal{width:min(480px,100%);border:1px solid #4a4479;background:#111122;border-radius:20px;padding:22px;box-shadow:0 20px 80px #0009}.modal-head{display:flex;justify-content:space-between;align-items:center}.modal h2{margin:0}.close{background:transparent;border:0;color:var(--muted);font-size:1.5rem}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#26234a;border:1px solid #7064af;color:white;padding:10px 16px;border-radius:12px;z-index:10;max-width:90%;box-shadow:0 10px 35px #0008}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:16px}.orb-wrap{min-height:190px;grid-row:1}.orb{width:145px;height:145px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}.hero h1{font-size:clamp(2.3rem,12vw,4rem)}}@media(max-width:520px){.wrap{padding:14px}.grid{grid-template-columns:1fr}.card{min-height:180px}header{align-items:flex-start}.brand small{font-size:.72rem}.top-actions{justify-content:flex-end}.top-actions .btn{padding:8px 10px;font-size:.84rem}.hero{gap:0}.orb-wrap{min-height:160px}.section-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand"><div class="logo">✦</div><div><strong>ORBITA</strong><small>CAJA DE HERRAMIENTAS DIGITALES</small></div></div>
+  <div class="top-actions"><span class="pill" id="saveStatus">● Guardado local</span><button class="btn subtle" id="accountBtn">Perfil local</button></div>
+</header>
+<main>
+<section class="hero">
+  <div><div class="eyebrow">Tu espacio · Tus herramientas</div><h1>Ideas que orbitan.<br><span class="gradient">Herramientas que crean.</span></h1><p>Un pequeño centro de mando digital para escribir, calcular, guardar ideas y explorar nuevas posibilidades. Diseñado para funcionar también desde el teléfono.</p><div class="stats"><span class="pill">✧ 100% adaptable</span><span class="pill">⌁ Guarda en este dispositivo</span><span class="pill">◈ Prototipo v0.1</span></div><a class="btn primary" href="#tools" style="display:inline-block;text-decoration:none">Explorar herramientas ↓</a></div>
+  <div class="orb-wrap" aria-hidden="true"><span class="star s1">✦</span><span class="star s2">✧</span><span class="star s3">·</span><span class="star s4">✦</span><div class="orb"></div></div>
+</section>
+<section id="tools">
+<div class="section-head"><div><h2>Herramientas de la órbita</h2><p>Elige un módulo para empezar.</p></div><span class="pill" id="toolCount">4 módulos activos</span></div>
+<div class="grid">
+  <article class="card"><div class="card-icon">🪐</div><h3>Bloc cósmico</h3><p>Escribe una idea, una tarea o una nota y guárdala en este dispositivo.</p><button class="btn" data-scroll="notes">Abrir bloc ↗</button></article>
+  <article class="card"><div class="card-icon">⌗</div><h3>Calculadora rápida</h3><p>Resuelve operaciones aritméticas básicas en segundos.</p><button class="btn" data-modal="calculator">Calcular ↗</button></article>
+  <article class="card"><div class="card-icon">✧</div><h3>Generador de ideas</h3><p>Obtén una pregunta creativa para desbloquear el siguiente paso.</p><button class="btn" id="ideaBtn">Generar idea ↗</button></article>
+  <article class="card"><div class="card-icon">◉</div><h3>Asistente IA</h3><p>Prepara una consulta para una IA externa. La conexión real requiere una API segura.</p><button class="btn" data-scroll="ai">Preparar consulta ↗</button></article>
+  <article class="card"><div class="card-icon">▤</div><h3>Notas guardadas</h3><p>Revisa y elimina tus notas guardadas localmente.</p><button class="btn" data-scroll="notes">Ver notas ↗</button></article>
+  <article class="card"><div class="card-icon">◎</div><h3>Perfil del dispositivo</h3><p>Guarda un nombre visible para personalizar esta experiencia.</p><button class="btn" id="profileToolBtn">Personalizar ↗</button></article>
+</div>
+</section>
+<section class="two-col">
+  <div class="panel" id="notes"><h2>✦ Bloc cósmico</h2><p>Las notas permanecen en este navegador mediante almacenamiento local.</p><div class="field"><label for="noteTitle">Título</label><input id="noteTitle" maxlength="80" placeholder="Ej. Idea para el proyecto"></div><div class="field"><label for="noteBody">Tu nota</label><textarea id="noteBody" maxlength="5000" placeholder="Escribe aquí..."></textarea></div><div class="row"><button class="btn primary" id="saveNote">Guardar nota</button><button class="btn" id="clearNote">Limpiar campos</button></div><div class="note-list" id="noteList"></div></div>
+  <div class="panel" id="ai"><h2>✧ Preparador de consultas IA</h2><p>Redacta una instrucción y cópiala para usarla en tu asistente favorito.</p><div class="field"><label for="aiGoal">¿Qué quieres conseguir?</label><input id="aiGoal" maxlength="300" placeholder="Ej. Ayúdame a planificar una app"></div><div class="field"><label for="aiContext">Contexto adicional</label><textarea id="aiContext" maxlength="1500" placeholder="Añade requisitos, límites o detalles..."></textarea></div><div class="row"><button class="btn primary" id="makePrompt">Crear consulta</button><button class="btn" id="copyPrompt">Copiar texto</button></div><div class="output" id="aiOutput" aria-live="polite">Tu consulta aparecerá aquí.</div><div class="notice">Este prototipo no envía datos a una IA. Para conectar un modelo real, usa un backend y guarda la clave API en el servidor, nunca en el JavaScript público.</div></div>
+</section>
+<section class="panel" style="margin-top:14px"><h2>◇ Estado del prototipo</h2><p>Notas y perfil se guardan en el almacenamiento local del navegador. No existe todavía un sistema de cuentas real ni sincronización entre dispositivos. Para eso necesitaremos autenticación y una base de datos en un servicio backend.</p><div class="row"><button class="btn" id="exportBtn">Exportar mis notas (.json)</button><button class="btn" id="clearAllBtn">Borrar datos locales</button></div></section>
+</main>
+<footer><span>ORBITA · Prototipo experimental</span><span>Hecho para explorar posibilidades, una herramienta a la vez. ✦</span></footer>
+</div>
+<div id="modalHost"></div><div id="toast" class="toast hidden" role="status"></div>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const safeRead = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; } };
+  let notes = safeRead('orbita_notes', []);
+  let profile = safeRead('orbita_profile', {name:'Explorador'});
+  let currentPrompt = '';
+  const persist = () => { localStorage.setItem('orbita_notes', JSON.stringify(notes)); localStorage.setItem('orbita_profile', JSON.stringify(profile)); $('saveStatus').textContent = '● Guardado local'; };
+  function toast(message) { const t=$('toast'); t.textContent=message; t.classList.remove('hidden'); clearTimeout(toast.timer); toast.timer=setTimeout(()=>t.classList.add('hidden'),2600); }
+  function renderNotes() {
+    const list=$('noteList'); list.replaceChildren();
+    if (!notes.length) { const empty=document.createElement('p'); empty.className='hint'; empty.textContent='Todavía no hay notas guardadas.'; list.append(empty); return; }
+    [...notes].reverse().forEach((note) => {
+      const item=document.createElement('article'); item.className='note';
+      const title=document.createElement('strong'); title.textContent=note.title || 'Nota sin título';
+      const body=document.createElement('div'); body.textContent=note.body;
+      const meta=document.createElement('small'); meta.textContent=new Date(note.createdAt).toLocaleString();
+      const del=document.createElement('button'); del.className='btn'; del.textContent='Eliminar'; del.style.marginTop='8px'; del.addEventListener('click',()=>{notes=notes.filter(n=>n.id!==note.id);persist();renderNotes();toast('Nota eliminada.');});
+      item.append(title,body,meta,del); list.append(item);
+    });
+  }
+  function showProfile() {
+    const host=$('modalHost'); host.replaceChildren();
+    const backdrop=document.createElement('div'); backdrop.className='modal-backdrop';
+    const modal=document.createElement('section'); modal.className='modal';
+    modal.innerHTML='<div class="modal-head"><h2>Perfil local</h2><button class="close" aria-label="Cerrar">×</button></div><p class="hint">Este nombre solo se guarda en este navegador. No crea una cuenta en línea.</p><div class="field"><label for="profileName">Nombre visible</label><input id="profileName" maxlength="40"></div><div class="row"><button class="btn primary" id="saveProfile">Guardar perfil</button><button class="btn" id="cancelProfile">Cancelar</button></div>';
+    backdrop.append(modal); host.append(backdrop); $('profileName').value=profile.name || '';
+    const close=()=>host.replaceChildren();
+    modal.querySelector('.close').addEventListener('click',close); $('cancelProfile').addEventListener('click',close);
+    backdrop.addEventListener('click',e=>{if(e.target===backdrop)close();});
+    $('saveProfile').addEventListener('click',()=>{profile.name=$('profileName').value.trim()||'Explorador';persist();close();toast('Perfil local actualizado.');});
+  }
+  function showCalculator() {
+    const host=$('modalHost'); host.replaceChildren();
+    const backdrop=document.createElement('div'); backdrop.className='modal-backdrop';
+    const modal=document.createElement('section'); modal.className='modal';
+    modal.innerHTML='<div class="modal-head"><h2>Calculadora rápida</h2><button class="close" aria-label="Cerrar">×</button></div><p class="hint">Operaciones básicas: +, -, *, / y paréntesis. Usa números solamente.</p><div class="field"><label for="calcInput">Operación</label><input id="calcInput" inputmode="decimal" placeholder="(12 + 8) / 2"></div><button class="btn primary" id="calcRun">Calcular</button><div class="output" id="calcOutput" aria-live="polite">El resultado aparecerá aquí.</div>';
+    backdrop.append(modal);host.append(backdrop); const close=()=>host.replaceChildren();
+    modal.querySelector('.close').addEventListener('click',close);backdrop.addEventListener('click',e=>{if(e.target===backdrop)close();});
+    const run=()=>{const expr=$('calcInput').value.trim(); const out=$('calcOutput'); if(!expr || !/^[0-9+\-*/().%\s]+$/.test(expr)){out.textContent='Introduce una operación válida usando números y + − * / ( ).';return;} try { const result=Function('"use strict"; return ('+expr+')')(); out.textContent=Number.isFinite(result)?String(result):'El resultado no es finito.'; } catch {out.textContent='No se pudo interpretar la operación.';}};
+    $('calcRun').addEventListener('click',run);$('calcInput').addEventListener('keydown',e=>{if(e.key==='Enter')run();});
+  }
+  $('saveNote').addEventListener('click',()=>{const body=$('noteBody').value.trim();if(!body){toast('Escribe algo antes de guardar.');return;}notes.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),title:$('noteTitle').value.trim(),body,createdAt:new Date().toISOString()});persist();renderNotes();$('noteTitle').value='';$('noteBody').value='';toast('Nota guardada en este dispositivo.');});
+  $('clearNote').addEventListener('click',()=>{$('noteTitle').value='';$('noteBody').value='';});
+  $('accountBtn').addEventListener('click',showProfile);$('profileToolBtn').addEventListener('click',showProfile);
+  document.querySelectorAll('[data-modal="calculator"]').forEach(b=>b.addEventListener('click',showCalculator));
+  document.querySelectorAll('[data-scroll]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.scroll).scrollIntoView({behavior:'smooth'})));
+  const ideas=['¿Qué tarea repetitiva podrías simplificar con una herramienta de cinco minutos?','¿Qué pequeño experimento podrías completar hoy para aprender algo nuevo?','Si tuvieras que explicar tu proyecto en una sola frase, ¿qué dirías?','¿Qué función eliminarías para que tu aplicación fuera más fácil de usar?','¿Qué problema cotidiano merece una solución digital sencilla?','¿Qué te gustaría haber construido dentro de treinta días?'];
+  $('ideaBtn').addEventListener('click',()=>{const idea=ideas[Math.floor(Math.random()*ideas.length)];toast(idea);$('aiGoal').value=idea;$('ai').scrollIntoView({behavior:'smooth'});});
+  $('makePrompt').addEventListener('click',()=>{const goal=$('aiGoal').value.trim();if(!goal){toast('Añade primero tu objetivo.');return;}currentPrompt='Actúa como un asistente experto. Ayúdame a lograr este objetivo: '+goal+'\n\nContexto adicional: '+($('aiContext').value.trim()||'No especificado')+'\n\nHaz preguntas si falta información y propón pasos concretos.';$('aiOutput').textContent=currentPrompt;});
+  $('copyPrompt').addEventListener('click',async()=>{if(!currentPrompt){toast('Primero crea una consulta.');return;}try{await navigator.clipboard.writeText(currentPrompt);toast('Consulta copiada.');}catch{$('aiOutput').textContent=currentPrompt+'\n\nSelecciona y copia el texto manualmente.';toast('El navegador no permitió copiar automáticamente.');}});
+  $('exportBtn').addEventListener('click',()=>{const data={app:'ORBITA',exportedAt:new Date().toISOString(),profile,notes};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='orbita-notas.json';a.click();URL.revokeObjectURL(url);toast('Exportación preparada.');});
+  $('clearAllBtn').addEventListener('click',()=>{if(confirm('¿Borrar todas las notas y el perfil guardados en este navegador? Esta acción no se puede deshacer.')){notes=[];profile={name:'Explorador'};persist();renderNotes();toast('Datos locales borrados.');}});
+  persist();renderNotes();
+})();
+</script>
+</body>
+</html>
